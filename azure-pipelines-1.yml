@@ -26,5 +26,7 @@ steps:
     organization: 'subit27'
     scannerMode: 'Other'
     projectKey: 'Subit27_hello-azure'
-- task: SonarQubePreBuild@1
-- task: SonarQubePostTest@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+- task: SonarCloudAnalyze@1
