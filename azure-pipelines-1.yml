@@ -25,3 +25,4 @@ steps:
     SonarCloud: 'https://sonarcloud.io'
     organization: 'subit27'
     scannerMode: 'Other'
+- task: SonarCloudAnalyze@1
