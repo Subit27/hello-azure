@@ -24,4 +24,4 @@ steps:
   inputs:
     SonarCloud: 'https://sonarcloud.io'
     organization: 'subit27'
-    scannerMode: 'MSBuild'
+    scannerMode: 'Other'
