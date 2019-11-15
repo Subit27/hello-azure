@@ -26,4 +26,5 @@ steps:
     organization: 'subit27'
     scannerMode: 'Other'
     projectKey: 'Subit27_hello-azure'
-- task: SonarCloudAnalyze@1
+- task: SonarQubePreBuild@1
+- task: SonarQubePostTest@1
