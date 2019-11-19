@@ -11,10 +11,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'settings.xml'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -54,7 +50,10 @@ steps:
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
 
-
-
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'settings.xml'
 - script: 
-    sudo cp /settings.xml ~/.m2
+    sudo mkdir "${HOME}/.m2"
+    sudo cp /settings.xml ${HOME}/.m2/settings.xml
+    sudo cp "$(settingsxml.secureFilePath)" "${HOME}/.m2/settings.xml"
