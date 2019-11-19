@@ -49,3 +49,9 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'settings.xml'
+- script: 
+    sudo cp settings.xml ~/.m2
