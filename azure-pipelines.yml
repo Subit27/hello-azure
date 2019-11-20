@@ -20,3 +20,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'https://sonarcloud.io'
+    organization: 'subit27'
+    scannerMode: 'Other'
+
+- task: SonarCloudAnalyze@1
+
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'settings.xml'
